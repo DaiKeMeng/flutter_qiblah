@@ -18,7 +18,7 @@ class FlutterQiblah {
 
   Stream<QiblahDirection> _qiblahStream;
 
-  Stream<CompassEvent> _compassStream;
+  Stream<QiblahCompassEvent> _compassStream;
 
   FlutterQiblah._();
 
@@ -61,7 +61,7 @@ class FlutterQiblah {
     return _instance._qiblahStream;
   }
 
-  static Stream<CompassEvent> get compassEventStrema {
+  static Stream<QiblahCompassEvent> get compassEventStrema {
     if (_instance._compassStream == null) {
       _instance._compassStream = FlutterCompass.events;
     }
