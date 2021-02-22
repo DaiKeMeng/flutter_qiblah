@@ -18,6 +18,8 @@ class FlutterQiblah {
 
   Stream<QiblahDirection> _qiblahStream;
 
+  Stream<CompassEvent> _compassStream;
+
   FlutterQiblah._();
 
   factory FlutterQiblah() {
@@ -57,6 +59,17 @@ class FlutterQiblah {
     }
 
     return _instance._qiblahStream;
+  }
+
+  static Stream<CompassEvent> get compassEventStrema {
+    if (_instance._compassStream == null) {
+      _instance._compassStream = FlutterCompass.events;
+    }
+    return _instance._compassStream;
+  }
+
+  double getOffsetFromNorth(double lat, double lng) {
+    return Utils.getOffsetFromNorth(lat, lng);
   }
 
   /// Merge the compass stream with location updates, and calculate the Qiblah direction
