@@ -116,3 +116,7 @@ class QiblahDirection {
 
   const QiblahDirection(this.qiblah, this.direction, this.offset);
 }
+
+class QiblahCompassEvent extends CompassEvent {
+  QiblahCompassEvent.fromList(List<double> data) : super.fromList(data);
+}
